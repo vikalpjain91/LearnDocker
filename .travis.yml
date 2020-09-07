@@ -6,4 +6,5 @@ before_install: # Build our image using Dockerfile.dev vikalp91/LearnDocker
   - docker build -t vikalp91/learndocker -f Dockerfile.dev .
 
 script:
-  - docker run vikalp91/learndocker npm run test -- --coverage
+  # - docker run vikalp91/learndocker npm run test -- --coverage # this command will never exits
+  - run -e CI=true vikalp91/learndocker npm run test -- --coverage
