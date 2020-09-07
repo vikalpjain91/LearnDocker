@@ -7,5 +7,5 @@ before_install: # Build our image using Dockerfile.dev vikalp91/LearnDocker
 
 script:
   # - docker run vikalp91/learndocker npm run test -- --coverage # this command will never exits
-  - run -e CI=true vikalp91/learndocker npm run test -- --coverage # this command throws error of 'run' command not found
+  # - run -e CI=true vikalp91/learndocker npm run test -- --coverage # this command throws error of 'run' command not found
   - docker run -e CI=true vikalp91/learndocker npm run test
