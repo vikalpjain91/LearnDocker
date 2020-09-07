@@ -1,0 +1,9 @@
+sudo: required
+services: # Telling Travis we need a copy of docker running
+  - docker
+
+before_install: # Build our image using Dockerfile.dev vikalp91/LearnDocker
+  - docker build -t vikalp91/LearnDocker -f Dockerfile.dev .
+
+script:
+  - docker run vikalp91/LearnDocker npm run test -- --coverage
